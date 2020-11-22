@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@469&display=swap" rel="stylesheet">
+    <link href="/OwlCarouesl/owl.carousel.min.css" rel="stylesheet">
+    <link href="/OwlCarouesl/owl.theme.default.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+  </head>
+
+<body >
+  
+  <div id="app"> </div>
+</body>
+<script src="main.js"></script>
+<script src="/OwlCarouesl/jquery.min.js"></script>
+<script src="/OwlCarouesl/owl.carousel.min.js"></script>
+<script src="/js/scrol.js"></script>
+<script>
+ 
+$(document).ready(function(){
+  $(".slide-one").owlCarousel({
+    autoplay: true,
+    autoplayTimeout: 5000,
+    smartSpeed:2000, 
+    loop: true,
+    margin: 10,
+    nav: false,
+    mouseDrag: false,
+    responsive: {
+            0:{
+                items:4
+            }
+        }
+    });
+
+    $(".slide-two").owlCarousel({
+        dots: true,
+        loop:true, 
+        margin: 10,
+        responsive:{ 
+            0:{
+                items:1
+            }
+        }
+    });
+
+    
+$(".slide-thre").owlCarousel({
+        dots: true,
+        loop:true, 
+        margin: 100,
+        responsive:{ 
+            0:{
+                items:4
+            },
+            
+        }
+    });
+});
+
+ 
+  
+  var owl = $('.slide-one');
+ 
+
+  $('.nxts').click(function () {
+    owl.trigger('next.owl.carousel');
+  })
+
+  $('.prev').click(function () {
+
+    owl.trigger('prev.owl.carousel');
+  });
+
+  
+
+</script>
+</html>
