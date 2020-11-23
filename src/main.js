@@ -3,11 +3,12 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-
- 
+import 'owl.carousel';
+import '/js/scrol.js';
 import App from '/components/App.vue'
 import Admin from '/components/Admin.vue'
 import Bal from '/components/Bal.vue'
+
 
  
 

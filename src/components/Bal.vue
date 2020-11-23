@@ -347,26 +347,87 @@
            "%0AВремя:"+ this.pol.Время +
            "%0AТелефон:" + this.pol.Телефон + 
            "%0AСообщение:" + this.pol.Сообщение
-         }
+         },
+
+        corl:function(){
+            $(".slide-one").owlCarousel({
+    autoplay: true,
+    autoplayTimeout: 5000,
+    smartSpeed:2000, 
+    loop: true,
+    margin: 10,
+    nav: false,
+    mouseDrag: false,
+    responsive: {
+            0:{
+                items:4
+            }
+        }
+    });
+
+    $(".slide-two").owlCarousel({
+        dots: true,
+        loop:true, 
+        margin: 10,
+        responsive:{ 
+            0:{
+                items:1
+            }
+        }
+    });
+
+    
+$(".slide-thre").owlCarousel({
+        dots: true,
+        loop:true, 
+        margin: 100,
+        responsive:{ 
+            0:{
+                items:4
+            },
+            
+        }
+    });
+
+
+ 
+  
+  var owl = $('.slide-one');
+ 
+
+  $('.nxts').click(function () {
+    owl.trigger('next.owl.carousel');
+  })
+
+  $('.prev').click(function () {
+
+    owl.trigger('prev.owl.carousel');
+  });
+        }
         },
-        mounted: function(){
-                       axios.get("http://localhost:9999/photo").then((Response)=>{
+        mounted: async function(){
+                    await   axios.get("http://localhost:9999/photo").then((Response)=>{
                       this.photo = Response.data;
              
-         })
+         });
 
-                      axios.get("http://localhost:9999/video").then((Response)=>{
+            await     axios.get("http://localhost:9999/video").then((Response)=>{
                       this.video = Response.data;
              
          })
-                 axios.get("http://localhost:9999/tran").then((Response)=>{
+            await     axios.get("http://localhost:9999/tran").then((Response)=>{
                       this.tran = Response.data;
              
          })
-
+          this.corl();
         },
         computed: {
  
         }
     }
+
+
+
+
+
 </script>
